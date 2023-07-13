@@ -12,7 +12,8 @@ public class Main {
     if (!result.equals(expected)) {
       throw new AssertionError("Expected: " + System.lineSeparator() + String.format(expected) + System.lineSeparator() + System.lineSeparator() + "Got: " + System.lineSeparator() + result);
     }
-
+    System.out.println(expected);
+    System.out.println(result);
     System.out.println("Success");
   }
 }

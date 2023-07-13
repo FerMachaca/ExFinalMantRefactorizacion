@@ -1,11 +1,11 @@
 import java.util.HashMap;
 
 public class RentalInfo {
-
+  private static final String Rrgular_movie = "regular";
   public String statement(Customer customer) {
     HashMap<String, Movie> movies = new HashMap();
-    movies.put("F001", new Movie("You've Got Mail", "regular"));
-    movies.put("F002", new Movie("Matrix", "regular"));
+    movies.put("F001", new Movie("You've Got Mail", Rrgular_movie ));
+    movies.put("F002", new Movie("Matrix", Rrgular_movie ));
     movies.put("F003", new Movie("Cars", "childrens"));
     movies.put("F004", new Movie("Fast & Furious X", "new"));
 
@@ -17,7 +17,7 @@ public class RentalInfo {
       double thisAmount = 0;
 
       // determine amount for each movie
-      if (movies.get(r.getMovieId()).getCode().equals("regular")) {
+      if (movies.get(r.getMovieId()).getCode().equals(Rrgular_movie )) {
         thisAmount = 2;
         if (r.getDays() > 2) {
           thisAmount = ((r.getDays() - 2) * 1.5) + thisAmount;
